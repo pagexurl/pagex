@@ -8,7 +8,39 @@
   <meta name=”robots” content="index, follow">
   <link href="./output.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="./img/favicon.ico">
-<!-- HTML Meta Tags -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+  
+
 
 <meta name="description" content="Don't just own a website, drive traffic and increase sales through SEO, and Social Media Optimization">
 
@@ -27,7 +59,7 @@
 <meta name="twitter:description" content="Don't just own a website, drive traffic and increase sales through SEO, and Social Media Optimization">
 <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/8296089e-725a-4446-979a-dbc26d1a0687.png?token=NgnUWdEmED7Qze1Ao8pIwoK64v4Ly1Y4qf9CI7W-hws&height=630&width=1200&expires=33265503531">
 
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
 
   
 
@@ -36,8 +68,8 @@
   
     <!-- NAvbar Start -->
     
-    <header class=" ">
-      <nav class=" flex items-center justify-between p-6 lg:px-8 " aria-label="Global" >
+    <header class="fixed top-0 w-full z-50 bg-[#12172E]">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only"></span>
@@ -59,51 +91,49 @@
           <a href="#sec3" class="text-sm font-semibold leading-6 text-white">Tech & Tools</a>
         </div>
         <div class="hidden md:flex lg:flex-1 md:justify-end">
-          <a aria-label="Chat on WhatsApp" href="https://wa.me/2347038740576" class="text-sm font-semibold leading-6 text-white"><img alt="Chat on WhatsApp" src="./img/WhatsAppButtonGreenSmall.svg" />
+          <a aria-label="Chat on WhatsApp" href="https://wa.me/2347038740576" class="text-sm font-semibold leading-6 text-white">
+            <img alt="Chat on WhatsApp" src="./img/WhatsAppButtonGreenSmall.svg" />
           </a>
         </div>
       </nav>
     
-      <!-- Mobile menu, hidden by default -->
-      <div id="mobile-menu" class="hidden md:hidden" role="dialog" aria-modal="true">
-        <!-- Background backdrop -->
-        <div class="fixed inset-0 z-50"></div>
-        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#12172E] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="./img/logo.png" alt="company logo">
-            </a>
-            <button id="close-mobile-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-white">
-              <span class="sr-only">Close menu</span>
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+      <!-- Mobile menu with transition effect, hidden by default -->
+      <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#12172E] px-6 py-6 sm:max-w-sm overflow-y-auto transition-all duration-300 ease-in-out transform scale-y-0 origin-top" aria-modal="true">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="./img/logo.png" alt="company logo">
+          </a>
+          <button id="close-mobile-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-white">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6">
+          <div class="space-y-2 py-6">
+            <a href="#" class="menu-link -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Home</a>
+            <a href="#sec1" class="menu-link -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Features</a>
+            <a href="#sec2" class="menu-link -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Work</a>
+            <a href="#sec3" class="menu-link -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Tech & Tools</a>
           </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Home</a>
-                <a href="#sec1" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Features</a>
-                <a href="#sec2" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Work</a>
-                <a href="#sec3" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-purple-900">Tech & Tools</a>
-              </div>
-              <div class="py-6">
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/2347038740576" class="text-sm font-semibold leading-6 text-white"><img alt="Chat on WhatsApp" src="./img/WhatsAppButtonGreenSmall.svg" />
-                </a>
-              </div>
-            </div>
+          <div class="py-6">
+            <a aria-label="Chat on WhatsApp" href="https://wa.me/2347038740576" class="text-sm font-semibold leading-6 text-white">
+              <img alt="Chat on WhatsApp" src="./img/WhatsAppButtonGreenSmall.svg" />
+            </a>
           </div>
         </div>
       </div>
-    </header>  
+    </header>
+    
+    
 
  
     
     
   <!-- Navbar End -->
-
+  <div class="page-wrap xyz-in">
   <!-- Herr section start -->
   <div class="relative isolate overflow-hidden bg-gray-900 py-20 sm:py-28">
     <img src="./images/bbg1.webp" alt="back-office" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center bg-opacity-10">
@@ -115,8 +145,8 @@
     </div>
     <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col">
       <div class="mx-auto max-w-2xl h-scree lg:mx-0 flex flex-col items-center self-center">
-        <h2 class="text-4xl font-bold tracking-tight text-white md:text-6xl text-center">Boost Your Online Presence with Expert <br> <span class="md:text-4xl sm:text-2xl">Web Development, SEO  & SMO Services</span></h2>
-        <p class="hidden  md:block mt-6 text-lg leading-8 text-gray-300 text-center  mb-4">"Don't just own a website, drive traffic and increase sales through SEO, and Social Media Optimization"</p>
+        <h2 class="text-4xl font-bold tracking-tight text-white md:text-6xl text-center animate__animated animate__fadeInLeft animate__delay-1s	">Boost Your Online Presence with Expert <br> <span class="md:text-4xl sm:text-2xl">Web Development, SEO  & SMO Services</span></h2>
+        <p class="hidden  md:block mt-6 text-lg leading-8 text-gray-300 text-center  mb-4 animate__animated animate__fadeInRight animate__delay-1s	">"Don't just own a website, drive traffic and increase sales through SEO, and Social Media Optimization"</p>
         <p>
                 <!-- <a aria-label="Chat on WhatsApp" href="https://wa.me/2347038740576" class="text-sm font-semibold leading-6 text-white"><img alt="Chat on WhatsApp" src="./img/WhatsAppButtonGreenSmall.svg" /></p> -->
       </div>
@@ -184,7 +214,7 @@
 
  <!-- Start and another feature section -->
 
- <div class=" py-10 sm:py-20" id="2">
+ <div class=" py-10 sm:py-20   animate__animated animate__fadeInLeft animate-on-scroll " id="2">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:text-center">
         
@@ -390,7 +420,7 @@
 
 
 
-
+</div>
 
 
 
@@ -419,7 +449,7 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMobileMenuButton = document.getElementById('close-mobile-menu');
@@ -431,6 +461,32 @@
   
     closeMobileMenuButton.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+  </script> -->
+
+
+  <script>
+    // Get elements
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuButton = document.getElementById('close-mobile-menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+  
+    // Toggle mobile menu
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  
+    // Close menu when close button is clicked
+    closeMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  
+    // Close menu when any menu link is clicked
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
     });
   </script>
 </body>
